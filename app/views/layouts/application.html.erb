@@ -12,14 +12,29 @@
   <body>
     <div class="header">
       <div id='cssmenu'>
-        <ul>
-          <li class='active'><a href='#'><span>Products</span></a></li>
-          <li><a href='#'><span>Company</span></a></li>
-          <li class='last'><a href='#'><span>Contact</span></a></li>
-        </ul>
+        <div>
+          <ul>
+            <li class='active'><%= link_to 'Товары', root_path %></li>
+            <li><a href='#'><span>О компании</span></a></li>
+          </ul>
+          <ul style="float: right">
+            <% if user_signed_in? %>
+              <%= current_user.email %>
+              <li><a href='#'><span>Корзина</span></a></li>
+              <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Войти', user_session_path %></link_to></li>
+              <li><%= link_to 'зарегистрироваться', new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
 
+    <% unless notice.blank? || alert.blank? %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
