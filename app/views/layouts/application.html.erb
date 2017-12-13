@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KworkRails</title>
+    <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="header">
+      <div id='cssmenu'>
+        <ul>
+          <li class='active'><a href='#'><span>Products</span></a></li>
+          <li><a href='#'><span>Company</span></a></li>
+          <li class='last'><a href='#'><span>Contact</span></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

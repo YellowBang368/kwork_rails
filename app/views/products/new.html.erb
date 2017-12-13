@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body style="background: #dddddd">
+    <%= form_for @product do |pr| %>
+      <div class="field">
+        <%= pr.text_field :name, placeholder: 'Наименование'%>
+      </div>
+      <div class="field">
+        <%= pr.text_field :firm, placeholder: 'Фирма' %>
+      </div>
+      <div class="field">
+        <%= pr.text_field :price, placeholder: 'Цена' %>
+      </div>
+      <div class="field">
+        <%= pr.text_area :firm, placeholder: 'Описание' %>
+      </div>
+      <div class="field">
+        <%= pr.submit 'Добавить', class: 'button-create' %>
+      </div>
+    <% end %>
+</body>
+</html>
+
+

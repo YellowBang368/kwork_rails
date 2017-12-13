@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="main">
+    <div class="intro">
+      <div class="content">
+        <div class="content-center">
+          <h1>Все онлайн-услуги от 500 Р</h1>
+          <p>Kwork - это по-настоящему удобный магазин онлайн-услуг.
+            Добавляйте услуги в корзину и заказывайте их в пару кликов. Адекватные цены, скорость исполнения и гарантия возврата средств - никогда еще фриланс не был таким приятным!</p>
+          <div class="box">
+            <div class="container-4">
+              <input type="search" id="search" placeholder="Search..." />
+              <button class="icon">Поиск</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <% @products.each do |product| %>
+        <%= link_to product_path(product) do %>
+          <div class="col-1-5">
+            <div class="resource-block">
+              <div class="half-vertical-top">
+                <%= image_tag('products/product.jpg') %>
+              </div>
+              <div class="half-vertical-bot">
+                <div class="almost-vertical">
+                  <h2 class="product-name"><%= product.name %></h2>
+                </div>
+                <div class="few-vertical">
+                  <hr class="style1">
+                  <p class="price" style="margin-right:5px; float:right;"><%= product.price %> ₽</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>
