@@ -27,9 +27,12 @@ class ProductsController < ApplicationController
     def add_to_cart
     end
 
+    def search_for_product(product_name)
+      @products = Product.where("name LIKE ?", "%#{product_name}%")
+    end
+
     private
     def avatar
-
     end
 
     def product_params
