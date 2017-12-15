@@ -17,6 +17,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'acts_as_ferret'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+gem 'paperclip', '~> 5.0.0'
 
 group :development, :test do
   gem 'sqlite3'

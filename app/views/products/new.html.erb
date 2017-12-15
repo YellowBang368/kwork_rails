@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 </head>
 <body style="background: #dddddd">
-    <%= form_for @product do |pr| %>
+    <%= form_for @product, html: {mulripart: true} do |pr| %>
       <div class="field">
         <%= pr.text_field :name, placeholder: 'Наименование'%>
       </div>
@@ -16,6 +16,9 @@
       </div>
       <div class="field">
         <%= pr.text_area :firm, placeholder: 'Описание' %>
+      </div>
+      <div class="field">
+        <%= pr.file_field :avatar %>
       </div>
       <div class="field">
         <%= pr.submit 'Добавить', class: 'button-create' %>
